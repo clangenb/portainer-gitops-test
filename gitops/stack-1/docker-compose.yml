@@ -16,7 +16,7 @@ services:
     environment:
       - NODENAME=node1
     configs:
-      - source: to_email_config
+      - source: to_chris_email_config
         target: /run/configs/to_chris_email_config
     deploy:
       replicas: 1
