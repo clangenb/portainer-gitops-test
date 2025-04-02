@@ -11,13 +11,13 @@ services:
       - "/bin/sh"
       - "-c"
       - |
-        export TO_EMAIL=$$(cat /run/configs/to_email_config)
+        export TO_EMAIL=$$(cat /run/configs/to_chris_email_config)
         /entrypoint.sh
     environment:
       - NODENAME=node1
     configs:
       - source: to_email_config
-        target: /run/configs/to_email_config
+        target: /run/configs/to_chris_email_config
     deploy:
       replicas: 1
 
