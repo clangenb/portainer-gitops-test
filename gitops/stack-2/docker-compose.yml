@@ -48,7 +48,7 @@ services:
         exec /run.sh
 
 configs:
-  to_email_config:
+  to_chris_email_config:
     external: true
   smtp_server_config:
     external: true
