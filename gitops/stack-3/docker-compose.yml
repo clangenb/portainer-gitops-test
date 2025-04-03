@@ -14,7 +14,7 @@ services:
         export TO_EMAIL=$$(cat /run/configs/to_chris_email_config)
         /entrypoint.sh
     environment:
-      - NODENAME=node2
+      - NODENAME=node3
     configs:
       - source: to_chris_email_config
         target: /run/configs/to_chris_email_config
