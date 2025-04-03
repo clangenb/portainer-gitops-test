@@ -14,7 +14,7 @@ services:
         export TO_EMAIL=$$(cat /run/configs/to_chris_email_config)
         /entrypoint.sh
     environment:
-      - NODENAME=multi-node
+      - NODENAME=node2
     configs:
       - source: to_chris_email_config
         target: /run/configs/to_chris_email_config
@@ -37,6 +37,8 @@ services:
         target: /run/configs/server_hostname_config
       - source: smtp_password_secret
         target: /run/configs/smtp_password_secret
+      - source: test_config
+        target: /run/configs/test.conf
     entrypoint:
       - "/bin/sh"
       - "-c"
@@ -48,6 +50,8 @@ services:
         exec /run.sh
 
 configs:
+  test_config:
+    file: ./test.conf
   to_chris_email_config:
     external: true
   smtp_server_config:
